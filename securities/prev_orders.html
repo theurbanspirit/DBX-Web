@@ -80,66 +80,12 @@
         <td>Buy</td>
         <td>173625</td>
         <td>1</td>
-       <td><button type="button" data-toggle="modal" data-target="#myModal" class="use-add btn btn-default">trade</button></td>
       </tr>
       
       
     </tbody>
   </table>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
-                    </div>
-                <div class="modal-body">
-                    <center>
-                    
-                    <h3 class="media-heading">  </h3>
-                    <span><strong>BUY OR SELL???</strong></span>
-                        <button class="btn btn-default" data-toggle="modal" data-target="#buy">BUY</button>
-                        <button class="btn btn-default" data-toggle="modal" data-target="#sell">SELL</button>
-                    </center>
-                    <hr>
-                    <center>
-                   
-                    <br>
-                    </center>
-                </div>
-            
-            </div>
-        </div>
-   </div>
-
-   <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-                <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel"></h4>
-                    </div>
-
-    <div class="modal-body">
-                    <center>
-                    
-                    <h3 class="media-heading"><strong>BUY</strong></h3>
-                       <input type="submit" name="buy">
-                        <button type="submit" form="buy-form" class="btn btn-default" data-toggle="modal" data-target="#buy">BUY</button>
-                       
-                    </center>
-                    <hr>
-                    <center>
-                   
-                    <br>
-                    </center>
-                </div>
-   </div>
- </div>
-</div>
-
-
-
+  
 </div>
 
 
@@ -148,18 +94,5 @@
 
 
 </body>
-<script>
 
-  $(".use-add").click(function() {
-
-    var $item = $(this).closest("tr")   // Finds the closest row <tr> 
-                       .find(".nr")     // Gets a descendent with class="nr"
-                       .text();         // Retrieves the text within <td>
-
-    $(".media-heading").text($item);       // Outputs the answer
-});
-
-
-
-</script>
 </html>
