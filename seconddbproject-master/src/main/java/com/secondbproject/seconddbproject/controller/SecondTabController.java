@@ -5,6 +5,7 @@ import com.secondbproject.seconddbproject.model.SecondTab;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.IntegerSyntax;
 import java.util.List;
 
 /**
@@ -33,15 +34,19 @@ public class SecondTabController {
        System.out.println(list);
        return list;
    }
-
-
-    @RequestMapping(value="/getSingleRecord/{id}")
+   @RequestMapping(value="/getSingleRecord/{id}")
     public SecondTab getSingleRecord(
+       @PathVariable Integer id){
+       SecondTab st = secondTabImpl.getSingleRecord(id);
+       return st;
+   }
+
+    @RequestMapping(value="/getSingleList/{id}")
+    public List<SecondTab> getSingleList(
             @PathVariable Integer id){ //?
 
-        SecondTab st=secondTabImpl.
-                getSingleRecord(id);
-        return st;
+       List<SecondTab> list2=secondTabImpl.getSingleList(id);
+        return list2;
     }
 
     @RequestMapping(value="/updateRecord/{id}/{name}")

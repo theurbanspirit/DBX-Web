@@ -17,8 +17,14 @@ public class SecondTab {
     String sector;
     String symbol;
     String isin;
+    //  Integer market_lot;
+    //  String price_variance_limit;
 
 
+    // public Integer getTrader_id() {
+    //   return trader_id;
+    //}
+    //Integer trader_id;
     /*    public Integer getSecurity_id() {
             return security_id;
         }0
@@ -54,9 +60,25 @@ public class SecondTab {
     public void setIsin(String isin) {
         this.isin = isin;
     }
+}
+    /*public Integer getMarket_lot() {
+        return market_lot;
+    }
+
+    public void setMarket_lot(Integer market_lot) {
+        this.market_lot = market_lot;
+    }
+
+    public String getPrice_variance_limit() {
+        return price_variance_limit;
+    }
+
+    public void setPrice_variance_limit(String price_variance_limit) {
+        this.price_variance_limit = price_variance_limit;
+    }*/
 
 
-    public Integer getTrader_id() {
+    /*public Integer getTrader_id() {
         return trader_id;
     }
 
@@ -74,7 +96,7 @@ public class SecondTab {
 
     Integer trader_id;
     Double value;
-}
+}*/
  /* //------------------>ORDERS
     String client_name;
     String security;

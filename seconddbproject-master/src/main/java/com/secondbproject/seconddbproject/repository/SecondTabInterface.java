@@ -16,6 +16,8 @@ public interface SecondTabInterface {
 
     SecondTab getSingleRecord(Integer id);
 
+    List<SecondTab> getSingleList(Integer id);
+
     void updateData(Integer id,String name);
 
     void deleteData(Integer id);
