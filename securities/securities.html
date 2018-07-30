@@ -43,11 +43,7 @@
 <div class="container" id="main" role="main">
             <ul class="menu">
                 <li ><a href="#"><mark>TRADE PAGE</mark></a></li>
-                <li><a href="all_securities.html">MARKET SECURITIES</a>
-                    
-                </li>
-                
-               
+                <li><a href="all_securities.html">MARKET SECURITIES</a></li>
                 <li><a href="prev_orders.html">YOUR ORDERS</a></li>
                 <li><a href="#">LOGOUT</a></li>
             </ul>
@@ -105,7 +101,7 @@
 
       </tr>
     </thead>
-    <tbody>
+    <tbody >
       <tr>
         <td>1</td>
         <td class="nr">HDFC BANK LTD</td>
@@ -114,7 +110,7 @@
         <td>INE040A01026</td>
         <td>1</td>
         <td>2%</td>
-       <td><button type="button" data-toggle="modal" data-target="#myModal" class="use-add btn btn-default">trade</button></td>
+       <td><button type="button" data-toggle="modal" data-target="#myModal" class="use-add btn btn-primary">trade</button></td>
       </tr>
       
       
@@ -130,16 +126,13 @@
                 <div class="modal-body">
                     <center>
                     
-                    <h3 class="media-heading">  </h3>
-                    <span><strong>BUY OR SELL???</strong></span>
-                        <button class="btn btn-default" data-toggle="modal" data-target="#buy">BUY</button>
-                        <button class="btn btn-default" data-toggle="modal" data-target="#sell">SELL</button>
+                    <h3 class="media-heading"></h3>
+                    
+                        <button class="btn btn-success" data-toggle="modal" data-target="#buy">BUY</button>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#sell">SELL</button>
                     </center>
-                    <hr>
-                    <center>
-                   
-                    <br>
-                    </center>
+                
+                    
                 </div>
             
             </div>
@@ -157,15 +150,15 @@
     <div class="modal-body">
                     <center>
                     
-                    <h3 class="media-heading"><strong>BUY</strong></h3>
-                       <input type="submit" name="buy">
-                        <button type="submit" form="buy-form" class="btn btn-default" data-toggle="modal" data-target="#buy">BUY</button>
+                    <form>
+                      <input type="text" name="buy" value="0.0">
+                      <input  class="btn btn-primary" type="submit" name="Buy">
+                    </form>
+                    
                        
-                    </center>
-                    <hr>
-                    <center>
                    
-                    <br>
+                   
+       
                     </center>
                 </div>
    </div>
@@ -179,6 +172,10 @@
 
 
 <br>
+
+
+
+
 
 
 </body>
