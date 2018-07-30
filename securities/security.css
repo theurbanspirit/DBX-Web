@@ -128,6 +128,7 @@ width: 50%;
 .progress.green .progress-left .progress-bar{
     animation: loading-5 1.2s linear forwards 1.8s;
 }
+
 @keyframes loading-1{
     0%{
         -webkit-transform: rotate(0deg);
