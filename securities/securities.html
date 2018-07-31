@@ -7,7 +7,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="security.css">
   
 
@@ -191,6 +190,35 @@
         </div>
    </div>
 
+<!---------------------------Alert pop ups--------------------------------->
+  <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="alertModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title" id="alertModalHeader">ALERT</h4>
+        </div>
+        <div class="modal-body">
+          <p id="alertMessage">ALERT MESSAGE</p>
+          <p id="alertLine2"></p>
+        </div>
+        <div class="modal-footer">
+          <button id="closeAlert" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+ <!------------------------------------------------------------------------->
+
    <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -249,3 +277,4 @@
 
 </script>
 </html>
+ <script src="alert.js"></script>
