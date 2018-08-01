@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery.session.js"></script>
+        <script type="text/javascript">
+
+            // To Read
+            $(function () {
+                //Set the value to session
+                $.session.set("userName", "This is session value");
+                //Get the value to session
+                alert($.session.get("userName"));
+            });
+
+        </script>
+    </head>
+    </html>
