@@ -109,7 +109,9 @@ fetch(balanceURL).then(
 	}
 	
 });
+
 //=========progress bar==============
+
   var a_limit = 100000;
   var a_executed = 40000;
   var a_remaining = a_limit - a_executed;
