@@ -109,3 +109,33 @@ fetch(balanceURL).then(
 	}
 	
 });
+//=========progress bar==============
+  var a_limit = 100000;
+  var a_executed = 40000;
+  var a_remaining = a_limit - a_executed;
+  document.getElementById("sec_a_limit").innerHTML =
+    "Sector A Limit: " + a_limit;
+  document.getElementById("sec_a_executed").innerHTML =
+    "Trades Executed: " + a_executed;
+  document.getElementById("sec_a_remaining").innerHTML =
+    "Remaining Balance: " + a_remaining;
+
+  var b_limit = 50000;
+  var b_executed = 30000;
+  var b_remaining = b_limit - b_executed;
+  document.getElementById("sec_b_limit").innerHTML =
+    "Sector B Limit: " + b_limit;
+  document.getElementById("sec_b_executed").innerHTML =
+    "Trades Executed: " + b_executed;
+  document.getElementById("sec_b_remaining").innerHTML =
+    "Remaining Balance: " + b_remaining;
+
+  var total_limit = a_limit + b_limit;
+  var total_executed = a_executed + b_executed;
+  var total_remaining = total_limit - total_executed;
+  document.getElementById("overall_limit").innerHTML =
+    "Overall Limit: " + total_limit;
+  document.getElementById("overall_executed").innerHTML =
+    "Trades Executed: " + total_executed;
+  document.getElementById("overall_remaining").innerHTML =
+    "Remaining Balance: " + total_remaining;
