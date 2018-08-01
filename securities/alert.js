@@ -139,3 +139,7 @@ fetch(balanceURL).then(
     "Trades Executed: " + total_executed;
   document.getElementById("overall_remaining").innerHTML =
     "Remaining Balance: " + total_remaining;
+
+  document.getElementById("progbar_a").innerHTML=Math.round((a_executed/a_limit)*100);
+  document.getElementById("progbar_b").innerHTML=Math.round((b_executed/b_limit)*100);
+  document.getElementById("progbar_c").innerHTML=Math.round((total_executed/total_limit)*100);
