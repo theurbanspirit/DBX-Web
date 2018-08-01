@@ -4,6 +4,7 @@ package com.dbfirstproject.firstdbproject.controller;
  * Created by abhi on 23/07/18.
  */
 
+import com.dbfirstproject.firstdbproject.Implementor.add_data;
 import com.dbfirstproject.firstdbproject.Implementor.login_impl;
 import com.dbfirstproject.firstdbproject.message.Response;
 import com.dbfirstproject.firstdbproject.model.Trader_login;
@@ -29,6 +30,14 @@ public class RestWebController {
     }
 
 
+   @Autowired
+    add_data a;
+
+    @GetMapping(value = "/csvs")
+    public void rc() {
+       System.out.println("sdjksjb");
+        a.readCsvUsingLoad();
+    }
 
 
 
