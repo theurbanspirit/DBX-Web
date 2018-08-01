@@ -20,7 +20,7 @@ public class login_impl implements login_interface {
         String returnMsg = "";
         Response response;
 
-        String sql = "select * from login_trader where name=?";
+        String sql = "select * from trader_login where name=?";
         System.out.println("name is : " + name);
         try {
             Trader_login v = templ.queryForObject(sql, new Object[]{name}, new BeanPropertyRowMapper<>(Trader_login.class));
