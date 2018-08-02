@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +7,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="js/jquery.session.js"></script>
 
 <link rel="stylesheet" href="security.css">
   
@@ -22,77 +17,168 @@
 
 
 </head>
-<body onload="ajaxPost()">
+<body onload="combine()">
 
 <div class="container" id="main" role="main">
             <ul class="menu">
-                <li><a href="Securities.html">TRADE PAGE</a></li>
+              <li><a href="prev_orders.html"><mark>YOUR TRADES</mark></a></li>
+                <li><a href="securities.html">TRADE PAGE</a></li>
                 <li><a href="all_securities.html">MARKET SECURITIES</a>
                     
-                </li>
-                
-               
-                <li><a href="prev_orders.html"><mark>YOUR ORDERS</mark></a></li>
+                </li> 
                 <li><a href="http://www.google.com">LOGOUT</a></li>
             </ul>
         </div>
 
 
-  <div class="page-head">
 
+    <div class="row">
       <div class="profile">
 
         <div class="card">
-        <!--img src="images/profile_id.jpg" alt="Jason" style="width:100%"-->
+        <!--img src ="images/profile_id.jpg" alt="Jason" style="width:100%"-->
         <h1>Anjali Verma</h1>
         <!--p class="title">CEO & Founder, Example</p>
         <p>Harvard University</p-->
        
       </div>
       </div>
-
-      
     </div>
-  
-    
-<div class="container">
-  <h2>Previous Trades</h2>
-  <p>This table shows previous executed trades</p>            
-  <table class="table table-striped" >
-    <thead>
-      <tr>
-        <th>S.no</th>
-        <th>Client</th>
-        <th>Security</th>
-        <th>Quantity</th>
-        <th>Buy/Sell</th>
-        <th>Value</th>
-        <th>Order Id</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td class="nr">Andres Iniesta</td>
-           <td>Bharti Airtel LTD</td>
-        <td>500</td>
-        <td>Buy</td>
-        <td>173625</td>
-        <td>1</td>
-      </tr>
-      
-      
-    </tbody>
-  </table>
+
+    <div class="row">
+      <div  class="col-md-4" style="width: 30%;">
+        <div class="bar" >
+        <div class="progress a">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value" id="progbar_a"></div>
+            </div>
+        <div style="text-align:center">
+          
+          <center><h6 id="sec_a_limit"></h6></center>
+          <center><h6 id="sec_a_executed"></h6></center>
+          <center><h6 id="sec_a_remaining"></h6></center>
+        </div>
+
+        </div>
+      </div>
+
+      <div  class="col-md-4" style="width: 30%">
+      <div class="bar" >
+        <div class="progress b">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value" id="progbar_b"></div>
+            </div>
+        <div style="text-align:center">
+          
+          <center><h6 id="sec_b_limit"></h6></center>
+          <center><h6 id="sec_b_executed"></h6></center>
+          <center><h6 id="sec_b_remaining"></h6></center>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+      <div class="bar" >
+        <div class="progress c">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value" id="progbar_c"></div>
+            </div>
+        <div style="text-align:center">
+          
+          <center><h6 id="overall_limit"></h6></center>
+          <center><h6 id="overall_executed"></h6></center>
+          <center><h6 id="overall_remaining"></h6></center>
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+    
   
-</div>
+  
+  <div class="row">
+    <div class="container">
+      <p>Listed below are your prior executed trades</p> 
+      <h3>Sector A</h3>        
+      <table class="table table-striped"  id="sector1">
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Client</th>
+            <th>Security</th>
+            <th>Quantity</th>
+            <th>Buy/Sell</th>
+            <th>Value</th>
+            <th>Order Id</th>
+            <th>Price</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+           
+          
+        </tbody>
+      </table>
+      </div>
+      <div class="container">
+      <h3>Sector B</h3>       
+      <table class="table table-striped"  id="sector2">
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Client</th>
+            <th>Security</th>
+            <th>Quantity</th>
+            <th>Buy/Sell</th>
+            <th>Value</th>
+            <th>Order Id</th>
+            <th>Price</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+          </tr>
+          
+          
+        </tbody>
+      </table>
+      </div>  
+    </div>
 
 
 
 <br>
-
+<a href="securities.html">
+<h3 style="color: #40574a; text-align: center;">Yearning to trade more?</h3>
+</a>
 
 </body>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.session.js"></script>
 <script src="js/postlist.js"></script>
+
+<!-- <script src="alert.js"></script> -->
 </html>
