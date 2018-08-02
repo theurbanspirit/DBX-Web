@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="security.css">
+
+  
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body onload="ajaxPost()">
+
+
+<div class="container" id="main" role="main">
+            <ul class="menu">
+                <li ><a href="#"><mark>TRADE PAGE</mark></a></li>
+                <li><a href="all_securities.html">MARKET SECURITIES</a></li>
+                <li><a href="prev_orders.html">YOUR ORDERS</a></li>
+                <li><a href="#">LOGOUT</a></li>
+            </ul>
+        </div>
+
+  
+    <div class="page-head">
+
+      <div class="profile">
+
+        <div class="card">
+        <!--img src="images/profile_id.jpg" alt="Jason" style="width:100%"-->
+        <h1>Anjali Verma</h1>
+        <!--p class="title">CEO & Founder, Example</p>
+        <p>Harvard University</p-->
+       
+      </div>
+      </div>
+
+      <div class="bar" >
+       <div class="progress blue">
+                <span class="progress-left">
+                    <span class="progress-bar"></span>
+                </span>
+                <span class="progress-right">
+                    <span class="progress-bar"></span>
+                </span>
+                <div class="progress-value">90%</div>
+            </div>
+        <div style="text-align:center">
+          
+          <center><h3>Available Balance : 3,40,000</h3></center>
+        </div>
+
+      </div>
+    </div>
+        
+
+
+
+
+<div class="container">
+  <h2>Securities Table</h2>
+  <p>This tables shows the securities</p>            
+  <table class="table table-striped"  id="security_table">
+    <thead>
+      <tr>
+        <th>Security</th>
+        <th>Company Name</th>
+        <th>Sector</th>
+        <th>Symbol</th>
+        <th>Isin</th>
+        <th>Market_Lot</th>
+        <th>Price Variance Limit</th>
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        
+      <!-- <td><button type="button" data-toggle="modal" data-target="#myModal" class="use-add btn btn-primary">trade</button></td> -->
+      </tr>
+      
+      
+    </tbody>
+  </table>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
+        <div class="modal-dialog" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    
+                    <h3 class="media-heading"></h3>
+                    
+                        <button class="btn btn-success" data-toggle="modal" data-target="#buy">BUY</button>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#sell">SELL</button>
+                    </center>
+                
+                    
+                </div>
+            
+            </div>
+        </div>
+   </div>
+
+   <div class="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+                <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+
+    <div class="modal-body">
+                    <center>
+                    
+                    <form>
+                      <bold>PRICE :</bold><input type="text" name="buy" value="0.0">
+                      <br>
+                      <bold>QUANTITY :</bold><input type="text" name="buy" value="0.0">
+                      <br>
+                      <input  class="btn btn-primary" type="submit" name="Buy">
+                    </form>
+                    
+                       
+                   
+                   
+       
+                    </center>
+                </div>
+   </div>
+ </div>
+</div>
+
+
+
+</div>
+
+
+
+<br>
+
+
+
+
+
+
+</body>
+<script>
+  
+
+function ajaxPost(){
+      
+       
+      
+      $.ajax({
+      type : "GET",
+      contentType : "application/json",
+      url : "http://localhost:7877/getdata",
+    //  data : JSON.stringify(formData),
+      dataType : 'json',
+      success : function(result) {
+        alert("hi");
+        console.log(result.length);
+        for(var i=0; i<result.length;i++)
+        {
+          console.log(result[i].sector);
+        }
+
+
+    $.each(result, function(i, item) {
+    $('<tr>').html("<td>" + result[i].symbol + "</td><td>" + result[i].isin + "</td><td>" + result[i].sector + "</td>").appendTo('#security_table');
+});
+     
+
+        console.log(result);
+      },
+      error : function(e) {
+        alert("Error!")
+        console.log("ERROR: ", e);
+      }
+    }); 
+
+    alert("hi");
+      
+      
+    } 
+
+
+  $(".use-add").click(function() {
+
+    var $item = $(this).closest("tr")   // Finds the closest row <tr> 
+                       .find(".nr")     // Gets a descendent with class="nr"
+                       .text();         // Retrieves the text within <td>
+
+    $(".media-heading").text($item);       // Outputs the answer
+});
+
+
+
+</script>
+</html>

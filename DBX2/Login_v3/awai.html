@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body onload="ajaxPost()">
+
+<p>ghj</p>
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+
+function ajaxPost(){
+    	
+       
+    	
+    	$.ajax({
+			type : "GET",
+			contentType : "application/json",
+			url : "http://localhost:7877/getdata",
+		//	data : JSON.stringify(formData),
+			dataType : 'json',
+			success : function(result) {
+				alert("hi");
+				console.log(result);
+			},
+			error : function(e) {
+				alert("Error!")
+				console.log("ERROR: ", e);
+			}
+		}); 
+
+		alert("hi");
+    	
+    	
+    } 
+</script>
+
+</body>
+</html> 
