@@ -12,6 +12,37 @@ var breachCount = 0;
 var closeAlert = document.getElementById('closeAlert');
 var alertLine2 = document.getElementById('alertLine2');
 
+
+function importcsv(){
+      
+
+        
+      // DO POST
+      $.ajax({
+      type : "GET",
+      contentType : "application/json",
+      url : "http://localhost:6942/api/csvs",
+     // data : JSON.stringify(formData),
+    //  dataType : 'json',
+      success : function(result) {
+         
+         alertModal("Your data has been added to the database..Happy Trading");
+        console.log(result);
+      },
+      error : function(e) {
+        alert("Error!")
+        console.log("ERROR: ", e);
+      }
+    });
+      
+
+
+
+     
+ }
+    
+
+
 //==========Balance exceeded============= 
 fetch(balanceURL).then(
 	function(response){
@@ -83,7 +114,7 @@ fetch(tradeURL).then(
 
 
 //=============Variance breach=========
-fetch(balanceURL).then(
+/*fetch(balanceURL).then(
 	function(response){
 		return response.json();
 		}
@@ -109,7 +140,7 @@ fetch(balanceURL).then(
 	}
 	
 });
-
+*/
 //=========progress bar==============
 
   var a_limit = 100000;
@@ -142,6 +173,6 @@ fetch(balanceURL).then(
   document.getElementById("overall_remaining").innerHTML =
     "Remaining Balance: " + total_remaining;
 
-  document.getElementById("progbar_a").innerHTML=Math.round((a_executed/a_limit)*100);
+  document.getElementById("percent").innerHTML="5";
   document.getElementById("progbar_b").innerHTML=Math.round((b_executed/b_limit)*100);
   document.getElementById("progbar_c").innerHTML=Math.round((total_executed/total_limit)*100);

@@ -4,33 +4,67 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" href="a.css">
 <link rel="stylesheet" href="security.css">
   
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 
+<!--script src="alert.js"></script-->
 
 </head>
-<body>
+<body >
 
-<div class="container" id="main" role="main">
+
+
+
+<div class="container" id="main" role="main" style="display: flex;">
+  <div >
             <ul class="menu">
               <li><a href="prev_orders.html"><mark>YOUR TRADES</mark></a></li>
                 <li><a href="securities.html">TRADE PAGE</a></li>
                 <li><a href="all_securities.html">MARKET SECURITIES</a>
                     
                 </li> 
+                
                 <li><a href="http://www.google.com">LOGOUT</a></li>
             </ul>
+            </div>
+        
+<div class="csv_import" style="width: 30%" >
+
+
+  
+
+  <button  style="margin:5px 150px" type="button" onclick="importcsv()" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">DATA IMPORT</button>
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <!--button type="button" class="close" data-dismiss="modal">&times;</button-->
+          
         </div>
-
-
+        <div class="modal-body">
+          <p>CONGRATS IMPORT IS DONE...HAPPY TRADING!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>
 
     <div class="row">
       <div class="profile">
@@ -46,72 +80,49 @@
     </div>
 
 
-    <div class="row">
-      <div  class="col-md-4" style="width: 30%;">
-        <div class="bar" >
-        <div class="progress a">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value" id="progbar_a"></div>
+
+
+
+<div class="row">
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>SEC</h4>
+                        <div class="easypiechart chart" id="easypiechart-blue" data-percent="0" ><span class="percent" style="font-size: 30px">92</span></div>
+                    </div>
+                </div>
             </div>
-        <div style="text-align:center">
-          
-          <center><h6 id="sec_a_limit"></h6></center>
-          <center><h6 id="sec_a_executed"></h6></center>
-          <center><h6 id="sec_a_remaining"></h6></center>
-        </div>
 
-        </div>
-      </div>
-
-      <div  class="col-md-4" style="width: 30%">
-      <div class="bar" >
-        <div class="progress b">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value" id="progbar_b"></div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>SEC</h4>
+                        <div class="easypiechart" id="easypiechart-orange" data-percent="2" ><span class="percent" style="font-size: 30px">50</span></div>
+                    </div>
+                </div>
             </div>
-        <div style="text-align:center">
-          
-          <center><h6 id="sec_b_limit"></h6></center>
-          <center><h6 id="sec_b_executed"></h6></center>
-          <center><h6 id="sec_b_remaining"></h6></center>
-        </div>
-
-        </div>
-      </div>
-
-      <div class="col-md-4">
-      <div class="bar" >
-        <div class="progress c">
-                <span class="progress-left">
-                    <span class="progress-bar"></span>
-                </span>
-                <span class="progress-right">
-                    <span class="progress-bar"></span>
-                </span>
-                <div class="progress-value" id="progbar_c"></div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>SEC</h4>
+                        <div class="easypiechart" id="easypiechart-teal" data-percent="56" ><span style="font-size: 30px" class="percent"></span></div>
+                    </div>
+                </div>
             </div>
-        <div style="text-align:center">
-          
-          <center><h6 id="overall_limit"></h6></center>
-          <center><h6 id="overall_executed"></h6></center>
-          <center><h6 id="overall_remaining"></h6></center>
+            
         </div>
 
-        </div>
-      </div>
+    
+       
+        
+     
 
-    </div>
-    </div>
+
+    
+      
+
+      
+
     
   
   
@@ -191,5 +202,21 @@
 </a>
 
 </body>
-<script src="alert.js"></script>
+
+  
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+
+<script type="text/javascript">
+
+
+window.onload = function(){
+
+                // Put all your code here
+                // And at the end run start() function
+               alert(document.getElementById("easypiechart-teal").data-percent);
+
+
+            }
+</script>
 </html>
