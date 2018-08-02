@@ -1,18 +1,13 @@
 function ajaxPost(){
     	
        
-    	// PREPARE FORM DATA
-    	/*var formData = {
-    		name : $("#username").val(),
-    		password :  $("#pass").val()
-
-    	} */
+    	
         
     	// DO POST
     	$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url : "http://localhost:7877/api/login",
+			url : "http://localhost:8999//getdataSector1/1",
 		//	data : JSON.stringify(formData),
 			dataType : 'json',
 			success : function(result) {
